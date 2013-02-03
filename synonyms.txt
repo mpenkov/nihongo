@@ -1,0 +1,23 @@
+one,floor,ceiling
+seven,diced
+nine,baseball
+ten,needle
+day,sun,tongue wagging in the mouth
+month,moon,flesh,part of the body
+rice field,brains
+eye,eyeball
+early,flower
+drop of,eyedropper
+oneself,nose,nostrils
+white,white bird
+round,fat man
+measurement,glue,glued to
+Dr.,acupuncturist
+wind,weather vane
+bound up,bind up,chain,rope
+shellfish,shells,oyster,clam
+page,head
+fish guts,fishhook,hook
+craft,I beam,artificial
+sword,dagger,saber
+street,nail,spike

@@ -1,0 +1,100 @@
+1,one,
+2,two,one
+3,three,one
+4,four,mouth,human legs
+5,five,
+6,six,top hat,animal legs
+7,seven,
+8,eight,
+9,nine,
+10,ten,
+11,mouth,
+12,day,
+13,month,
+14,rice field,
+15,eye,
+16,old,ten,mouth
+17,I,five,mouths
+18,risk,sun,eye
+19,companion,flesh
+20,bright,sun,moon
+21,chant,mouth,wagging tongue
+22,sparkle,sun
+23,goods,mouth
+24,spine,
+25,prosperous,sun
+26,early,sun,needle
+27,rising sun,baseball,sun
+28,generation,ten
+29,stomach,flesh,brain
+30,nightbreak,sun,floor
+31,gall bladder,flesh,nighbreak
+32,span,sun,floor,ceiling
+33,concave,
+34,convex,
+35,olden times,walking stick,day
+36,oneself,drop,eyes
+37,white,drop,sun
+38,hundred,one,white
+39,in,walking stick,mouth
+40,thousand,drop,ten
+41,tongue,mouth,thousand
+42,measuring box,thousand,needle
+43,rise up,sun,measuring box
+44,round,drop,nine
+45,measurement,drop,ten
+46,specialty,ten,rice field,glue
+47,Dr.,needle,specialty
+48,fortune-telling,divining rod,mouth
+49,above,magic wand,floor
+50,below,magic wand,ceiling
+51,eminent,sunflower,magic wand
+52,morning,moon,mist
+53,only,mouth,animal legs
+54,shellfish,eye,animal legs
+55,upright,shellfish,magic wand
+56,employee,mouth,shellfish
+57,see,eye,human legs
+58,newborn babe,olden times,human legs
+59,beginning,two,human legs
+60,page,one,drop,shellfish
+61,stubborn,beginning,head
+62,mediocre,drop,wind
+63,defeat,bound up,shellfish
+64,ten thousand,one,bound up
+65,phrase,bound up,mouth
+66,texture,part of the body,wind
+67,decameron,bound up,day
+68,ladle,bound up,drop
+69,bull's eye,white bird,ladle
+70,neck,horns,nose
+71,fish guts,
+72,riot,tongue,fishhook
+73,straightaway,needle,eye,fishhook
+74,tool,eye
+75,true,eye of the needle,tool
+76,craft,
+77,left,by one's side,craft
+78,right,by one's side,mouth
+79,possess,meat,by one's side
+80,bribe,shellfish,possess
+81,tribute,craft,money
+82,paragraph,head,craft
+83,sword,
+84,blade,dagger,drop
+85,cut,diced,dagger
+86,seduce,dagger,mouth
+87,shining,seduce,sun
+88,rule,clam,saber
+89,vice-,saber,wealth
+90,separate,mouth,bound up,saber
+91,street,
+92,village,street sign,rice field
+93,can,mouth,spikes
+94,place on the head,nail,head
+95,child,
+96,cavity,child,hook
+97,complete,child
+98,woman,
+99,fond,woman,child
+100,likeness,woman,mouth
