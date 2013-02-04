@@ -29,5 +29,5 @@ for l in lines:
         stories[heisig_number].add(prim)
 
 for heisig in sorted(stories):
-    print heisig, keywords[heisig]
-    print "\t", "\n\t".join(stories[heisig])
+    print "%s,%s," % (heisig, keywords[heisig])
+    #print "\t", "\n\t".join(stories[heisig])
