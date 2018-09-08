@@ -1,0 +1,142 @@
+<html>
+
+<style>
+
+</style>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.1/d3.min.js"></script>
+
+<div id="graph"> </div>
+
+<script>
+
+// https://thinkingonthinking.com/Getting-Started-With-D3/
+var width = window.innerWidth * 2;
+var height = window.innerHeight * 2;
+var circleWidth = 40;
+var kanjiFontSize = "4em";
+
+var vis = d3.select("#graph")
+            .append("svg")
+						.attr("width", width)
+						.attr("height", height);
+
+// Some sample data so we can tweak things statically
+var nodes = [
+	{kanji: "雨", keyword: "rain"},
+	{kanji: "雪", keyword: "snow"},
+	{kanji: "雷", keyword: "thunder"}
+];
+
+var links = [
+  {source: 0, target: 1},
+  {source: 0, target: 2}
+];
+
+var currentKanji = 0;
+
+// <data></data>
+
+var edge = vis.selectAll(".line")
+  .data(links)
+  .enter()
+
+edge.append("line")
+  .style("stroke", "black")
+  ;
+
+var elem = vis.selectAll("g")
+  .data(nodes)
+  ;
+
+var elemEnter = elem.enter()
+  .append("g")
+  .attr("id", function (d) {
+    if (d.kanji == nodes[currentKanji].kanji) {
+      return "currentCircle";
+    }
+  })
+  ;
+
+var circle = elemEnter.append("svg:circle")
+  .attr("r", circleWidth + "px")
+  .attr("stroke", "black")
+  .attr("fill", function (d) {
+    if (d.kanji == nodes[currentKanji].kanji) {
+      return "pink";
+    } else {
+      return "white";
+    }
+  })
+  ;
+
+//TEXT
+var kanji = elemEnter.append("text")
+  .text(function(d, i) { return d.kanji; })
+  .attr("dy", function (d) { return +22; })
+  .attr("text-anchor", "middle")
+  .attr("font-family", "Bree Serif")
+  .attr("fill", "black")
+  .attr("font-size", kanjiFontSize)
+  .on("click", function(d) {
+    console.log(d.kanji);
+    window.location.href = '/?kanji=' + d.kanji;
+  })
+  ;
+
+var keywords = elemEnter.append("text")
+  .text(function(d, i) { return d.keyword; })
+  .attr("text-anchor", "middle")
+  .attr("dy", function (d) { return +65; })
+  .attr("font-family", "Bree Serif")
+  .attr("fill", function(d, i) {  return "red";  })
+  .attr("font-size", function(d, i) { return "2em"; })
+  ;
+
+var force = d3.layout.force()
+  .nodes(nodes)
+  .links(links)
+  .gravity(0.1)
+  .charge(-10000)
+  .size([width, height])
+  ;
+
+function centerOnKanji() {
+  var elt = document.getElementById("currentCircle");
+  var transform = elt.getAttribute("transform")
+  var coords = transform.substring("translate(".length, transform.length - 1).split(",");
+
+  var x = parseFloat(coords[0]) - window.innerWidth / 2;
+  var y = parseFloat(coords[1]) - window.innerHeight / 2;
+  console.log("window.scrollTo(" + x + "," + y + ")");
+  window.scrollTo(x, y);
+}
+
+force.on("tick", function(e) {
+  elem.attr("transform", function(d, i) {
+    return "translate(" + d.x + "," + d.y + ")";
+  });
+
+  vis.selectAll("line")
+    .attr("x1", function(d) { return d.source.x; })
+    .attr("y1", function(d) { return d.source.y; })
+    .attr("x2", function(d) { return d.target.x; })
+    .attr("y2", function(d) { return d.target.y; })
+});
+
+var n = 10;
+force.start();
+for (var i = n * n; i > 0; --i) force.tick();
+force.stop();
+
+setTimeout(centerOnKanji, 100);
+
+document.addEventListener('keydown', function(event) {
+  if (event.code == 'Enter') {
+    centerOnKanji();
+  }
+});
+
+</script>
+
+</html>
