@@ -3,6 +3,7 @@ import csv
 import gzip
 import io
 import json
+import os.path as P
 
 import cherrypy
 import mako.template
@@ -16,15 +17,9 @@ def search(graph, node, seen, depth=1000):
     if depth == 0:
         return
 
-    neighbors = [src for (src, dst) in graph.in_edges([node])]
-    neighbors += [dst for (src, dst) in graph.out_edges([node])]
-
-    logging.debug('node: %r depth: %r neighbors: %r seen: %r',
-                  node, depth, neighbors, seen)
-
     seen.add(node)
 
-    for n in neighbors:
+    for _, n in graph.edges([node]):
         if n not in seen:
             search(graph, n, seen, depth - 1)
 
@@ -58,23 +53,33 @@ def adaptive_subgraph(graph, kanji, threshold=20):
         search(G, kanji, seen, depth=depth)
         if len(seen) < threshold:
             break
+    logging.debug('seen: %r', seen)
     return graph.subgraph(seen)
 
 
 class WebApp(object):
     @cherrypy.expose
-    def index(self, kanji='露'):
-        try:
-            kanji = from_keyword[kanji]
-        except KeyError:
-            pass
-        subgraph = adaptive_subgraph(G, kanji)
+    def index(self, kanji='露', heisig_lesson=None):
+        if heisig_lesson:
+            lesson_kanji = [k['kanji'] for k in heisig_dict.values()
+                            if k['lessonnumber'] == heisig_lesson]
+            subgraph = G.subgraph(lesson_kanji)
+            centrality = nx.degree_centrality(subgraph)
+            max_val = max(centrality.values())
+            kanji = [k for k, c in centrality.items() if c == max_val][0]
+        else:
+            try:
+                kanji = from_keyword[kanji]
+            except KeyError:
+                pass
+            subgraph = adaptive_subgraph(G, kanji)
 
         nodes = [
             {'kanji': k, 'keyword': get_keyword(k), "id": k}
             for k in subgraph.nodes
         ]
         node_index = {k['kanji']: i for i, k in enumerate(nodes)}
+        logging.info('node_index: %r', node_index)
         edges = [
             {'source': node_index[src], 'target': node_index[dst]}
             for (src, dst) in subgraph.edges
@@ -99,4 +104,15 @@ links = ${edges};
         return mako.template.Template(template).render(**variables)
 
 
-cherrypy.quickstart(WebApp())
+config = {
+    '/': {
+        'tools.staticdir.root': P.dirname(P.abspath(__file__)),
+    },
+    '/static': {
+        'tools.staticdir.on': True,
+        'tools.staticdir.dir': 'static',
+    }
+}
+cherrypy.tree.mount(WebApp(), '/', config=config)
+cherrypy.engine.start()
+cherrypy.engine.block()

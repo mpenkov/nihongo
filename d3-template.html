@@ -1,25 +1,67 @@
 <html>
+<title>Kanji demo</title>
 
 <style>
 
+#container { width: 100%; height: 95%; overflow-x: scroll; overflow-y: scroll; }
+.examples { font-size: 2em; background: lightsteelblue; text-align: center; }
+a { text-decoration: none; color: blue; }
+
 </style>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.1/d3.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.1/d3.min.js"></script> -->
+<script src="/static/d3.min.js"></script>
 
-<div id="graph"> </div>
+<div class="examples">
+  <a href="/?kanji=月">月</a>
+  <a href="/?kanji=火">火</a>
+  <a href="/?kanji=水">水</a>
+  <a href="/?kanji=木">木</a>
+  <a href="/?kanji=金">金</a>
+  <a href="/?kanji=土">土</a>
+  <a href="/?kanji=日">日</a>
+  <a href="/?kanji=一">一</a>
+  <a href="/?kanji=土">土</a>
+  <a href="/?kanji=木">木</a>
+  <a href="/?kanji=旭">旭</a>
+  <a href="/?kanji=待">待</a>
+  <a href="/?kanji=倉">倉</a>
+  <a href="/?kanji=鉄">鉄</a>
+  <a href="/?kanji=露">露</a>
+  <a href="/?kanji=嵐">嵐</a>
+  <a href="/?kanji=亭">亭</a>
+  <a href="/?kanji=漢">漢</a>
+  <a href="/?kanji=嘆">嘆</a>
+  <a href="/?kanji=喫">喫</a>
+  <a href="/?kanji=寮">寮</a>
+  <a href="/?kanji=署">署</a>
+  <a href="/?kanji=止">止</a>
+  <a href="/?kanji=女">女</a>
+
+  <a href="/?heisig_lesson=7">⑦</a>
+  <a href="/?heisig_lesson=8">⑧</a>
+  <a href="/?heisig_lesson=12">⑫</a>
+  <a href="/?heisig_lesson=17">⑰</a>
+</div>
+
+<div id="container">
+  <div id="graph" class="graph"> </div>
+</div>
 
 <script>
 
 // https://thinkingonthinking.com/Getting-Started-With-D3/
-var width = window.innerWidth * 2;
-var height = window.innerHeight * 2;
+var viewportWidth = window.innerWidth;
+var viewportHeight = window.innerHeight;
+var canvasWidth = window.innerWidth * 2;
+var canvasHeight = window.innerHeight * 2;
 var circleWidth = 40;
 var kanjiFontSize = "4em";
 
 var vis = d3.select("#graph")
             .append("svg")
-						.attr("width", width)
-						.attr("height", height);
+						.attr("width", canvasWidth)
+						.attr("height", canvasHeight);
 
 // Some sample data so we can tweak things statically
 var nodes = [
@@ -65,7 +107,7 @@ var circle = elemEnter.append("svg:circle")
     if (d.kanji == nodes[currentKanji].kanji) {
       return "pink";
     } else {
-      return "white";
+      return "silver";
     }
   })
   ;
@@ -96,9 +138,9 @@ var keywords = elemEnter.append("text")
 var force = d3.layout.force()
   .nodes(nodes)
   .links(links)
-  .gravity(0.1)
+  .gravity(0.75)
   .charge(-10000)
-  .size([width, height])
+  .size([canvasWidth, canvasHeight])
   ;
 
 function centerOnKanji() {
@@ -106,10 +148,42 @@ function centerOnKanji() {
   var transform = elt.getAttribute("transform")
   var coords = transform.substring("translate(".length, transform.length - 1).split(",");
 
-  var x = parseFloat(coords[0]) - window.innerWidth / 2;
-  var y = parseFloat(coords[1]) - window.innerHeight / 2;
+  var x = parseFloat(coords[0]) - viewportWidth / 2;
+  var y = parseFloat(coords[1]) - viewportHeight / 2;
   console.log("window.scrollTo(" + x + "," + y + ")");
-  window.scrollTo(x, y);
+
+  var graph = document.getElementById("container");
+  graph.scrollTo(x, y);
+}
+
+function lookupKanji() {
+  console.log("lookupKanji");
+  var formdata = {
+    "jukugosel": "1551498_1341350_X",
+    "actionparam": "_1551504_%BD%DC_0_",
+    "originalkey": "%BD%DC",
+    "dsrchkey": nodes[currentKanji]["kanji"],
+    "dicsel": "1",
+    "dsrchtype": "E"
+  };
+
+	// https://stackoverflow.com/questions/133925/javascript-post-request-like-a-form-submit
+  var form = document.createElement("form");
+  form.setAttribute("method", "POST");
+  form.setAttribute("action", "http://www.edrdg.org/cgi-bin/wwwjdic/wwwjdic?1F");
+  form.setAttribute("target", "blank");
+
+	for(var key in formdata) {
+		var hiddenField = document.createElement("input");
+		hiddenField.setAttribute("type", "hidden");
+		hiddenField.setAttribute("name", key);
+		hiddenField.setAttribute("value", formdata[key]);
+
+		form.appendChild(hiddenField);
+	}
+
+	document.body.appendChild(form);
+	form.submit();
 }
 
 force.on("tick", function(e) {
@@ -134,6 +208,8 @@ setTimeout(centerOnKanji, 100);
 document.addEventListener('keydown', function(event) {
   if (event.code == 'Enter') {
     centerOnKanji();
+  } else if (event.code == 'KeyJ') {
+    lookupKanji();
   }
 });
 
