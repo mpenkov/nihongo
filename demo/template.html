@@ -1,13 +1,27 @@
 <html>
 <title>Kanji demo</title>
 
+<head>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44066007-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-44066007-4');
+</script>
+
 <style>
 
-#container { width: 100%; height: 95%; overflow-x: scroll; overflow-y: scroll; }
+#container { width: 100%; height: 90%; overflow-x: scroll; overflow-y: scroll; }
 .examples { font-size: 2em; background: lightsteelblue; text-align: center; }
 a { text-decoration: none; color: blue; }
 
 </style>
+
+</head>
 
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.4.1/d3.min.js"></script> -->
 <script src="/static/d3.min.js"></script>
@@ -20,12 +34,7 @@ a { text-decoration: none; color: blue; }
   <a href="/?kanji=金">金</a>
   <a href="/?kanji=土">土</a>
   <a href="/?kanji=日">日</a>
-  <a href="/?kanji=一">一</a>
-  <a href="/?kanji=土">土</a>
-  <a href="/?kanji=木">木</a>
   <a href="/?kanji=旭">旭</a>
-  <a href="/?kanji=待">待</a>
-  <a href="/?kanji=倉">倉</a>
   <a href="/?kanji=鉄">鉄</a>
   <a href="/?kanji=露">露</a>
   <a href="/?kanji=嵐">嵐</a>

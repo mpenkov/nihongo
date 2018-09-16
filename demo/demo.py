@@ -4,6 +4,7 @@ import gzip
 import io
 import json
 import os.path as P
+import sys
 
 import cherrypy
 import mako.template
@@ -24,10 +25,11 @@ def search(graph, node, seen, depth=1000):
             search(graph, n, seen, depth - 1)
 
 
-G = nx.read_yaml('graph.yml')
+CURR_DIR = P.dirname(P.abspath(__file__))
+G = nx.read_yaml(P.join(CURR_DIR, 'graph.yml'))
 
 
-with gzip.GzipFile('heisig-data.txt.gz') as fin:
+with gzip.GzipFile(P.join(CURR_DIR, 'heisig-data.txt.gz')) as fin:
     fin.readline()
     reader = csv.DictReader(
         io.StringIO(fin.read().decode('utf-8')), delimiter=':'
@@ -90,7 +92,7 @@ class WebApp(object):
             'edges': json.dumps(edges),
         }
 
-        with open('d3-template.html') as fin:
+        with open(P.join(CURR_DIR, 'template.html'), encoding='utf-8') as fin:
             template = fin.read()
 
         template = template.replace(
@@ -104,15 +106,30 @@ links = ${edges};
         return mako.template.Template(template).render(**variables)
 
 
-config = {
-    '/': {
-        'tools.staticdir.root': P.dirname(P.abspath(__file__)),
-    },
-    '/static': {
-        'tools.staticdir.on': True,
-        'tools.staticdir.dir': 'static',
+def main():
+    host = '0.0.0.0'
+    port = 8080
+
+    try:
+        host = sys.argv[1]
+        port = int(sys.argv[2])
+    except IndexError:
+        pass
+
+    config = {
+        '/': {
+            'tools.staticdir.root': CURR_DIR,
+        },
+        '/static': {
+            'tools.staticdir.on': True,
+            'tools.staticdir.dir': 'static',
+        },
     }
-}
-cherrypy.tree.mount(WebApp(), '/', config=config)
-cherrypy.engine.start()
-cherrypy.engine.block()
+    cherrypy.tree.mount(WebApp(), '/', config=config)
+    cherrypy.config.update({'server.socket_host': host, 'server.socket_port': port})
+    cherrypy.engine.start()
+    cherrypy.engine.block()
+
+
+if __name__ == '__main__':
+    main()
