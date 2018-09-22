@@ -1,0 +1,30 @@
+<html>
+<body>
+<script>
+var formdata = {
+  "jukugosel": "1551498_1341350_X",
+  "actionparam": "_1551504_%BD%DC_0_",
+  "originalkey": "%BD%DC",
+  "dsrchkey": "露",
+  "dicsel": "1",
+  "dsrchtype": "E"
+};
+
+// https://stackoverflow.com/questions/133925/javascript-post-request-like-a-form-submit
+var form = document.createElement("form");
+form.setAttribute("method", "POST");
+form.setAttribute("action", "http://www.edrdg.org/cgi-bin/wwwjdic/wwwjdic?1F");
+
+for (var key in formdata) {
+  var hiddenField = document.createElement("input");
+  hiddenField.setAttribute("type", "hidden");
+  hiddenField.setAttribute("name", key);
+  hiddenField.setAttribute("value", formdata[key]);
+  form.appendChild(hiddenField);
+}
+
+document.body.appendChild(form);
+form.submit();
+</script>
+</body>
+</html>
