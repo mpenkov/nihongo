@@ -1,0 +1,214 @@
+{"number": 1, "char": "一", "strokes": 1, "en": "one", "kana": "いち", "romaji": "ichi"}
+{"number": 2, "char": "丨", "strokes": 1, "en": "line", "kana": "ぼう", "romaji": "bō"}
+{"number": 3, "char": "丶", "strokes": 1, "en": "dot", "kana": "てん", "romaji": "ten"}
+{"number": 4, "char": "丿", "strokes": 1, "en": "slash", "kana": "の", "romaji": "no"}
+{"number": 5, "char": "乙", "strokes": 1, "en": "second", "kana": "おつ", "romaji": "otsu"}
+{"number": 6, "char": "亅", "strokes": 1, "en": "hook", "kana": "はねぼう", "romaji": "hanebō"}
+{"number": 7, "char": "二", "strokes": 2, "en": "two", "kana": "ふた", "romaji": "futa"}
+{"number": 8, "char": "亠", "strokes": 2, "en": "lid", "kana": "なべぶた", "romaji": "nabebuta"}
+{"number": 9, "char": "人", "strokes": 2, "en": "man", "kana": "ひと", "romaji": "hito"}
+{"number": 10, "char": "儿", "strokes": 2, "en": "son, legs", "kana": "にんにょう", "romaji": "ninnyō"}
+{"number": 11, "char": "入", "strokes": 2, "en": "enter", "kana": "いる", "romaji": "iru"}
+{"number": 12, "char": "八", "strokes": 2, "en": "eight", "kana": "はちがしら", "romaji": "hachigashira"}
+{"number": 13, "char": "冂", "strokes": 2, "en": "wide", "kana": "まきがまえ", "romaji": "makigamae"}
+{"number": 14, "char": "冖", "strokes": 2, "en": "cloth cover", "kana": "わかんむり", "romaji": "wakammuri"}
+{"number": 15, "char": "冫", "strokes": 2, "en": "ice", "kana": "にすい", "romaji": "nisui"}
+{"number": 16, "char": "几", "strokes": 2, "en": "table", "kana": "つくえ", "romaji": "tsukue"}
+{"number": 17, "char": "凵", "strokes": 2, "en": "receptacle", "kana": "うけばこ", "romaji": "ukebako"}
+{"number": 18, "char": "刀", "strokes": 2, "en": "knife", "kana": "かたな", "romaji": "katana"}
+{"number": 19, "char": "力", "strokes": 2, "en": "power", "kana": "ちから", "romaji": "chikara"}
+{"number": 20, "char": "勹", "strokes": 2, "en": "wrap", "kana": "つつみがまえ", "romaji": "tsutsumigamae"}
+{"number": 21, "char": "匕", "strokes": 2, "en": "spoon", "kana": "さじのひ", "romaji": "sajinohi"}
+{"number": 22, "char": "匚", "strokes": 2, "en": "box", "kana": "はこがまえ", "romaji": "hakogamae"}
+{"number": 23, "char": "匸", "strokes": 2, "en": "hiding enclosure", "kana": "かくしがまえ", "romaji": "kakushigamae"}
+{"number": 24, "char": "十", "strokes": 2, "en": "ten", "kana": "じゅう", "romaji": "jū"}
+{"number": 25, "char": "卜", "strokes": 2, "en": "divination", "kana": "ぼくのと", "romaji": "bokunoto"}
+{"number": 26, "char": "卩", "strokes": 2, "en": "seal (device)", "kana": "ふしづくり", "romaji": "fushizukuri"}
+{"number": 27, "char": "厂", "strokes": 2, "en": "cliff", "kana": "がんだれ", "romaji": "gandare"}
+{"number": 28, "char": "厶", "strokes": 2, "en": "private", "kana": "む", "romaji": "mu"}
+{"number": 29, "char": "又", "strokes": 2, "en": "again", "kana": "また", "romaji": "mata"}
+{"number": 30, "char": "口", "strokes": 3, "en": "mouth", "kana": "くち", "romaji": "kuchi"}
+{"number": 31, "char": "囗", "strokes": 3, "en": "enclosure", "kana": "くにがまえ", "romaji": "kunigamae"}
+{"number": 32, "char": "土", "strokes": 3, "en": "earth", "kana": "つち", "romaji": "tsuchi"}
+{"number": 33, "char": "士", "strokes": 3, "en": "scholar", "kana": "さむらい", "romaji": "samurai"}
+{"number": 34, "char": "夂", "strokes": 3, "en": "go", "kana": "ふゆがしら", "romaji": "fuyugashira"}
+{"number": 35, "char": "夊", "strokes": 3, "en": "go slowly", "kana": "すいにょう", "romaji": "suinyō"}
+{"number": 36, "char": "夕", "strokes": 3, "en": "evening", "kana": "ゆうべ", "romaji": "yūbe"}
+{"number": 37, "char": "大", "strokes": 3, "en": "big", "kana": "だい", "romaji": "dai"}
+{"number": 38, "char": "女", "strokes": 3, "en": "woman", "kana": "おんな", "romaji": "onna"}
+{"number": 39, "char": "子", "strokes": 3, "en": "child", "kana": "こ", "romaji": "ko"}
+{"number": 40, "char": "宀", "strokes": 3, "en": "roof", "kana": "うかんむり", "romaji": "ukammuri"}
+{"number": 41, "char": "寸", "strokes": 3, "en": "inch", "kana": "すん", "romaji": "sun"}
+{"number": 42, "char": "小", "strokes": 3, "en": "small", "kana": "しょう", "romaji": "shō"}
+{"number": 43, "char": "尢", "strokes": 3, "en": "lame", "kana": "まげあし", "romaji": "mageashi"}
+{"number": 44, "char": "尸", "strokes": 3, "en": "corpse", "kana": "しかばね", "romaji": "shikabane"}
+{"number": 45, "char": "屮", "strokes": 3, "en": "sprout", "kana": "てつ", "romaji": "tetsu"}
+{"number": 46, "char": "山", "strokes": 3, "en": "mountain", "kana": "やま", "romaji": "yama"}
+{"number": 47, "char": "巛", "strokes": 3, "en": "river", "kana": "まがりがわ", "romaji": "magarigawa"}
+{"number": 48, "char": "工", "strokes": 3, "en": "work", "kana": "たくみ", "romaji": "takumi"}
+{"number": 49, "char": "己", "strokes": 3, "en": "oneself", "kana": "おのれ", "romaji": "onore"}
+{"number": 50, "char": "巾", "strokes": 3, "en": "turban", "kana": "はば", "romaji": "haba"}
+{"number": 51, "char": "干", "strokes": 3, "en": "dry", "kana": "ほす", "romaji": "hosu"}
+{"number": 52, "char": "幺", "strokes": 3, "en": "short thread", "kana": "いとがしら", "romaji": "itogashira"}
+{"number": 53, "char": "广", "strokes": 3, "en": "dotted cliff", "kana": "まだれ", "romaji": "madare"}
+{"number": 54, "char": "廴", "strokes": 3, "en": "long stride", "kana": "えんにょう", "romaji": "ennyō"}
+{"number": 55, "char": "廾", "strokes": 3, "en": "arch", "kana": "にじゅうあし", "romaji": "nijūashi"}
+{"number": 56, "char": "弋", "strokes": 3, "en": "shoot", "kana": "しきがまえ", "romaji": "shikigamae"}
+{"number": 57, "char": "弓", "strokes": 3, "en": "bow", "kana": "ゆみ", "romaji": "yumi"}
+{"number": 58, "char": "彐", "strokes": 3, "en": "snout", "kana": "けいがしら", "romaji": "keigashira"}
+{"number": 59, "char": "彡", "strokes": 3, "en": "bristle", "kana": "さんづくり", "romaji": "sandzukuri"}
+{"number": 60, "char": "彳", "strokes": 3, "en": "step", "kana": "ぎょうにんべん", "romaji": "gyōnimben"}
+{"number": 61, "char": "心", "strokes": 4, "en": "heart", "kana": "りっしんべん", "romaji": "risshimben"}
+{"number": 62, "char": "戈", "strokes": 4, "en": "halberd", "kana": "かのほこ", "romaji": "kanohoko"}
+{"number": 63, "char": "戶", "strokes": 4, "en": "door", "kana": "と", "romaji": "to"}
+{"number": 64, "char": "手", "strokes": 4, "en": "hand", "kana": "て", "romaji": "te"}
+{"number": 65, "char": "支", "strokes": 4, "en": "branch", "kana": "しにょう", "romaji": "shinyō"}
+{"number": 66, "char": "攴", "strokes": 4, "en": "rap, tap", "kana": "ぼくづくり", "romaji": "bokuzukuri"}
+{"number": 67, "char": "文", "strokes": 4, "en": "script", "kana": "ぶん", "romaji": "bun"}
+{"number": 68, "char": "斗", "strokes": 4, "en": "dipper", "kana": "とます", "romaji": "tomasu"}
+{"number": 69, "char": "斤", "strokes": 4, "en": "axe", "kana": "おの", "romaji": "ono"}
+{"number": 70, "char": "方", "strokes": 4, "en": "square", "kana": "ほう", "romaji": "hō"}
+{"number": 71, "char": "无", "strokes": 4, "en": "not", "kana": "なし", "romaji": "nashi"}
+{"number": 72, "char": "日", "strokes": 4, "en": "sun", "kana": "にち", "romaji": "nichi"}
+{"number": 73, "char": "曰", "strokes": 4, "en": "say", "kana": "いわく", "romaji": "iwaku"}
+{"number": 74, "char": "月", "strokes": 4, "en": "moon", "kana": "つき", "romaji": "tsuki"}
+{"number": 75, "char": "木", "strokes": 4, "en": "tree", "kana": "き", "romaji": "ki"}
+{"number": 76, "char": "欠", "strokes": 4, "en": "lack", "kana": "あくび", "romaji": "akubi"}
+{"number": 77, "char": "止", "strokes": 4, "en": "stop", "kana": "とめる", "romaji": "tomeru"}
+{"number": 78, "char": "歹", "strokes": 4, "en": "death", "kana": "がつ", "romaji": "gatsu"}
+{"number": 79, "char": "殳", "strokes": 4, "en": "weapon", "kana": "ほこつくり", "romaji": "hokotsukuri"}
+{"number": 80, "char": "毋", "strokes": 4, "en": "do not", "kana": "なかれ", "romaji": "nakare"}
+{"number": 81, "char": "比", "strokes": 4, "en": "compare", "kana": "くらべる", "romaji": "kuraberu"}
+{"number": 82, "char": "毛", "strokes": 4, "en": "fur", "kana": "け", "romaji": "ke"}
+{"number": 83, "char": "氏", "strokes": 4, "en": "clan", "kana": "うじ", "romaji": "uji"}
+{"number": 84, "char": "气", "strokes": 4, "en": "steam", "kana": "きがまえ", "romaji": "kigamae"}
+{"number": 85, "char": "水", "strokes": 4, "en": "water", "kana": "みず", "romaji": "mizu"}
+{"number": 86, "char": "火", "strokes": 4, "en": "fire", "kana": "ひ", "romaji": "hi"}
+{"number": 87, "char": "爪", "strokes": 4, "en": "claw", "kana": "つめ", "romaji": "tsume"}
+{"number": 88, "char": "父", "strokes": 4, "en": "father", "kana": "ちち", "romaji": "chichi"}
+{"number": 89, "char": "爻", "strokes": 4, "en": "Trigrams", "kana": "こう", "romaji": "kō"}
+{"number": 90, "char": "爿", "strokes": 4, "en": "split wood", "kana": "しょうへん", "romaji": "shōhen"}
+{"number": 91, "char": "片", "strokes": 4, "en": "slice", "kana": "かた", "romaji": "kata"}
+{"number": 92, "char": "牙", "strokes": 4, "en": "fang", "kana": "きば", "romaji": "kiba"}
+{"number": 93, "char": "牛", "strokes": 4, "en": "cow", "kana": "うし", "romaji": "ushi"}
+{"number": 94, "char": "犬", "strokes": 4, "en": "dog", "kana": "いぬ", "romaji": "inu"}
+{"number": 95, "char": "玄", "strokes": 5, "en": "profound", "kana": "げん", "romaji": "gen"}
+{"number": 96, "char": "玉", "strokes": 5, "en": "jade", "kana": "たま", "romaji": "tama"}
+{"number": 97, "char": "瓜", "strokes": 5, "en": "melon", "kana": "うり", "romaji": "uri"}
+{"number": 98, "char": "瓦", "strokes": 5, "en": "tile", "kana": "かわら", "romaji": "kawara"}
+{"number": 99, "char": "甘", "strokes": 5, "en": "sweet", "kana": "あまい", "romaji": "amai"}
+{"number": 100, "char": "生", "strokes": 5, "en": "life", "kana": "うまれる", "romaji": "umareru"}
+{"number": 101, "char": "用", "strokes": 5, "en": "use", "kana": "もちいる", "romaji": "mochiiru"}
+{"number": 102, "char": "田", "strokes": 5, "en": "field", "kana": "た", "romaji": "ta"}
+{"number": 103, "char": "疋", "strokes": 5, "en": "bolt of cloth", "kana": "ひき", "romaji": "hiki"}
+{"number": 104, "char": "疒", "strokes": 5, "en": "sickness", "kana": "やまいだれ", "romaji": "yamaidare"}
+{"number": 105, "char": "癶", "strokes": 5, "en": "footsteps", "kana": "はつがしら", "romaji": "hatsugashira"}
+{"number": 106, "char": "白", "strokes": 5, "en": "white", "kana": "しろ", "romaji": "shiro"}
+{"number": 107, "char": "皮", "strokes": 5, "en": "skin", "kana": "けがわ", "romaji": "kegawa"}
+{"number": 108, "char": "皿", "strokes": 5, "en": "dish", "kana": "さら", "romaji": "sara"}
+{"number": 109, "char": "目", "strokes": 5, "en": "eye", "kana": "め", "romaji": "me"}
+{"number": 110, "char": "矛", "strokes": 5, "en": "spear", "kana": "むのほこ", "romaji": "munohoko"}
+{"number": 111, "char": "矢", "strokes": 5, "en": "arrow", "kana": "や", "romaji": "ya"}
+{"number": 112, "char": "石", "strokes": 5, "en": "stone", "kana": "いし", "romaji": "ishi"}
+{"number": 113, "char": "示", "strokes": 5, "en": "spirit", "kana": "しめす", "romaji": "shimesu"}
+{"number": 114, "char": "禸", "strokes": 5, "en": "track", "kana": "ぐうのあし", "romaji": "gūnoashi"}
+{"number": 115, "char": "禾", "strokes": 5, "en": "grain", "kana": "のぎ", "romaji": "nogi"}
+{"number": 116, "char": "穴", "strokes": 5, "en": "cave", "kana": "あな", "romaji": "ana"}
+{"number": 117, "char": "立", "strokes": 5, "en": "stand", "kana": "たつ", "romaji": "tatsu"}
+{"number": 118, "char": "竹", "strokes": 6, "en": "bamboo", "kana": "たけ", "romaji": "take"}
+{"number": 119, "char": "米", "strokes": 6, "en": "rice", "kana": "こめ", "romaji": "kome"}
+{"number": 120, "char": "糸", "strokes": 6, "en": "silk", "kana": "いと", "romaji": "ito"}
+{"number": 121, "char": "缶", "strokes": 6, "en": "jar", "kana": "ほとぎ", "romaji": "hotogi"}
+{"number": 122, "char": "网", "strokes": 6, "en": "net", "kana": "あみがしら", "romaji": "amigashira"}
+{"number": 123, "char": "羊", "strokes": 6, "en": "sheep", "kana": "ひつじ", "romaji": "hitsuji"}
+{"number": 124, "char": "羽", "strokes": 6, "en": "feather", "kana": "はね", "romaji": "hane"}
+{"number": 125, "char": "老", "strokes": 6, "en": "old", "kana": "おい", "romaji": "oi"}
+{"number": 126, "char": "而", "strokes": 6, "en": "and", "kana": "しかして", "romaji": "shikashite"}
+{"number": 127, "char": "耒", "strokes": 6, "en": "plow", "kana": "らいすき", "romaji": "raisuki"}
+{"number": 128, "char": "耳", "strokes": 6, "en": "ear", "kana": "みみ", "romaji": "mimi"}
+{"number": 129, "char": "聿", "strokes": 6, "en": "brush", "kana": "ふでづくり", "romaji": "fudezukuri"}
+{"number": 130, "char": "肉", "strokes": 6, "en": "meat", "kana": "にく", "romaji": "niku"}
+{"number": 131, "char": "臣", "strokes": 6, "en": "minister", "kana": "しん", "romaji": "shin"}
+{"number": 132, "char": "自", "strokes": 6, "en": "self", "kana": "みずから", "romaji": "mizukara"}
+{"number": 133, "char": "至", "strokes": 6, "en": "arrive", "kana": "いたる", "romaji": "itaru"}
+{"number": 134, "char": "臼", "strokes": 6, "en": "mortar", "kana": "うす", "romaji": "usu"}
+{"number": 135, "char": "舌", "strokes": 6, "en": "tongue", "kana": "した", "romaji": "shita"}
+{"number": 136, "char": "舛", "strokes": 6, "en": "oppose", "kana": "ます", "romaji": "masu"}
+{"number": 137, "char": "舟", "strokes": 6, "en": "boat", "kana": "ふね", "romaji": "fune"}
+{"number": 138, "char": "艮", "strokes": 6, "en": "stopping", "kana": "こん", "romaji": "kon"}
+{"number": 139, "char": "色", "strokes": 6, "en": "color", "kana": "いろ", "romaji": "iro"}
+{"number": 140, "char": "艸", "strokes": 6, "en": "grass", "kana": "くさ", "romaji": "kusa"}
+{"number": 141, "char": "虍", "strokes": 6, "en": "tiger", "kana": "とらかんむり", "romaji": "torakammuri"}
+{"number": 142, "char": "虫", "strokes": 6, "en": "insect", "kana": "むし", "romaji": "mushi"}
+{"number": 143, "char": "血", "strokes": 6, "en": "blood", "kana": "ち", "romaji": "chi"}
+{"number": 144, "char": "行", "strokes": 6, "en": "walk enclosure", "kana": "ぎょう", "romaji": "gyō"}
+{"number": 145, "char": "衣 (⻂)", "strokes": 6, "en": "clothes", "kana": "ころも", "romaji": "koromo"}
+{"number": 146, "char": "襾", "strokes": 6, "en": "cover", "kana": "'''ア'''", "romaji": "a"}
+{"number": 147, "char": "見", "strokes": 7, "en": "see", "kana": "みる", "romaji": "miru"}
+{"number": 148, "char": "角", "strokes": 7, "en": "horn", "kana": "つの", "romaji": "tsuno"}
+{"number": 149, "char": "言 (訁)", "strokes": 7, "en": "speech", "kana": "ことば", "romaji": "kotoba"}
+{"number": 150, "char": "谷", "strokes": 7, "en": "valley", "kana": "たに", "romaji": "tani"}
+{"number": 151, "char": "豆", "strokes": 7, "en": "bean", "kana": "まめ", "romaji": "mame"}
+{"number": 152, "char": "豕", "strokes": 7, "en": "pig", "kana": "いのこ", "romaji": "inoko"}
+{"number": 153, "char": "豸", "strokes": 7, "en": "badger", "kana": "むじな", "romaji": "mujina"}
+{"number": 154, "char": "貝", "strokes": 7, "en": "shell", "kana": "かい", "romaji": "kai"}
+{"number": 155, "char": "赤", "strokes": 7, "en": "red", "kana": "あか", "romaji": "aka"}
+{"number": 156, "char": "走", "strokes": 7, "en": "run", "kana": "はしる", "romaji": "hashiru"}
+{"number": 157, "char": "足", "strokes": 7, "en": "foot", "kana": "あし", "romaji": "ashi"}
+{"number": 158, "char": "身", "strokes": 7, "en": "body", "kana": "み", "romaji": "mi"}
+{"number": 159, "char": "車", "strokes": 7, "en": "cart", "kana": "くるま", "romaji": "kuruma"}
+{"number": 160, "char": "辛", "strokes": 7, "en": "bitter", "kana": "からい", "romaji": "karai"}
+{"number": 161, "char": "辰", "strokes": 7, "en": "morning", "kana": "しんのたつ", "romaji": "shinnotatsu"}
+{"number": 162, "char": "辵", "strokes": 7, "en": "walk", "kana": "しんにょう", "romaji": "shinnyō"}
+{"number": 163, "char": "邑", "strokes": 7, "en": "city", "kana": "むら", "romaji": "mura"}
+{"number": 164, "char": "酉", "strokes": 7, "en": "wine", "kana": "ひよみのとり", "romaji": "hyominotori"}
+{"number": 165, "char": "釆", "strokes": 7, "en": "distinguish", "kana": "のごめ", "romaji": "nogome"}
+{"number": 166, "char": "里", "strokes": 7, "en": "village", "kana": "さと", "romaji": "sato"}
+{"number": 167, "char": "金 (釒)", "strokes": 8, "en": "gold", "kana": "かね", "romaji": "kane"}
+{"number": 168, "char": "長", "strokes": 8, "en": "long", "kana": "ながい", "romaji": "nagai"}
+{"number": 169, "char": "門", "strokes": 8, "en": "gate", "kana": "もん", "romaji": "mon"}
+{"number": 170, "char": "阜", "strokes": 8, "en": "mound", "kana": "おか", "romaji": "oka"}
+{"number": 171, "char": "隶", "strokes": 8, "en": "slave", "kana": "れいづくり", "romaji": "reizukuri"}
+{"number": 172, "char": "隹", "strokes": 8, "en": "short-tailed bird", "kana": "ふるとり", "romaji": "furutori"}
+{"number": 173, "char": "雨", "strokes": 8, "en": "rain", "kana": "あめ", "romaji": "ame"}
+{"number": 174, "char": "青", "strokes": 8, "en": "blue", "kana": "あお", "romaji": "ao"}
+{"number": 175, "char": "非", "strokes": 8, "en": "wrong", "kana": "あらず", "romaji": "arazu"}
+{"number": 176, "char": "面", "strokes": 9, "en": "face", "kana": "めん", "romaji": "men"}
+{"number": 177, "char": "革", "strokes": 9, "en": "leather", "kana": "かくのかわ", "romaji": "kakunokawa"}
+{"number": 178, "char": "韋", "strokes": 9, "en": "tanned leather", "kana": "なめしがわ", "romaji": "nameshigawa"}
+{"number": 179, "char": "韭", "strokes": 9, "en": "leek", "kana": "にら", "romaji": "nira"}
+{"number": 180, "char": "音", "strokes": 9, "en": "sound", "kana": "おと", "romaji": "oto"}
+{"number": 181, "char": "頁", "strokes": 9, "en": "leaf", "kana": "おおがい", "romaji": "ōgai"}
+{"number": 182, "char": "風", "strokes": 9, "en": "wind", "kana": "かぜ", "romaji": "kaze"}
+{"number": 183, "char": "飛", "strokes": 9, "en": "fly", "kana": "とぶ", "romaji": "tobu"}
+{"number": 184, "char": "食 (飠)", "strokes": 9, "en": "eat", "kana": "しょく", "romaji": "shoku"}
+{"number": 185, "char": "首", "strokes": 9, "en": "head", "kana": "くび", "romaji": "kubi"}
+{"number": 186, "char": "香", "strokes": 9, "en": "fragrant", "kana": "においこう", "romaji": "nioikō"}
+{"number": 187, "char": "馬", "strokes": 10, "en": "horse", "kana": "うま", "romaji": "uma"}
+{"number": 188, "char": "骨", "strokes": 10, "en": "bone", "kana": "ほね", "romaji": "hone"}
+{"number": 189, "char": "高", "strokes": 10, "en": "tall", "kana": "たかい", "romaji": "takai"}
+{"number": 190, "char": "髟", "strokes": 10, "en": "hair", "kana": "かみがしら", "romaji": "kamigashira"}
+{"number": 191, "char": "鬥", "strokes": 10, "en": "fight", "kana": "とうがまえ", "romaji": "tōgamae"}
+{"number": 192, "char": "鬯", "strokes": 10, "en": "sacrificial wine", "kana": "ちょう", "romaji": "chō"}
+{"number": 193, "char": "鬲", "strokes": 10, "en": "cauldron", "kana": "かなえ", "romaji": "kanae"}
+{"number": 194, "char": "鬼", "strokes": 10, "en": "ghost", "kana": "おに", "romaji": "oni"}
+{"number": 195, "char": "魚", "strokes": 11, "en": "fish", "kana": "うお", "romaji": "uo"}
+{"number": 196, "char": "鳥", "strokes": 11, "en": "bird", "kana": "とり", "romaji": "tori"}
+{"number": 197, "char": "鹵", "strokes": 11, "en": "salt", "kana": "ろ", "romaji": "ro"}
+{"number": 198, "char": "鹿", "strokes": 11, "en": "deer", "kana": "しか", "romaji": "shika"}
+{"number": 199, "char": "麥", "strokes": 11, "en": "wheat", "kana": "むぎ", "romaji": "mugi"}
+{"number": 200, "char": "麻", "strokes": 11, "en": "hemp", "kana": "あさ", "romaji": "asa"}
+{"number": 201, "char": "黃", "strokes": 12, "en": "yellow", "kana": "きいろ", "romaji": "kiiro"}
+{"number": 202, "char": "黍", "strokes": 12, "en": "millet", "kana": "きび", "romaji": "kibi"}
+{"number": 203, "char": "黑", "strokes": 12, "en": "black", "kana": "くろ", "romaji": "kuro"}
+{"number": 204, "char": "黹", "strokes": 12, "en": "embroidery", "kana": "ふつ", "romaji": "futsu"}
+{"number": 205, "char": "黽", "strokes": 13, "en": "frog", "kana": "べん", "romaji": "ben"}
+{"number": 206, "char": "鼎", "strokes": 13, "en": "tripod", "kana": "かなえ", "romaji": "kanae"}
+{"number": 207, "char": "鼓", "strokes": 13, "en": "drum", "kana": "つづみ", "romaji": "tsudzumi"}
+{"number": 208, "char": "鼠", "strokes": 13, "en": "rat", "kana": "ねずみ", "romaji": "nezumi"}
+{"number": 209, "char": "鼻", "strokes": 14, "en": "nose", "kana": "はな", "romaji": "hana"}
+{"number": 210, "char": "齊", "strokes": 14, "en": "even", "kana": "せい", "romaji": "sei"}
+{"number": 211, "char": "齒", "strokes": 15, "en": "tooth", "kana": "は", "romaji": "ha"}
+{"number": 212, "char": "龍", "strokes": 16, "en": "dragon", "kana": "りゅう", "romaji": "ryū"}
+{"number": 213, "char": "龜", "strokes": 16, "en": "turtle", "kana": "かめ", "romaji": "kame"}
+{"number": 214, "char": "龠", "strokes": 17, "en": "flute", "kana": "やく", "romaji": "yaku"}

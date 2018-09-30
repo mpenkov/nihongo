@@ -2,7 +2,9 @@
 import csv
 import gzip
 import io
+import itertools
 import json
+import logging
 import os.path as P
 import sys
 
@@ -10,8 +12,12 @@ import cherrypy
 import mako.template
 import networkx as nx
 
-import logging
-logging.basicConfig(level=logging.DEBUG)
+import chise
+import krad
+import kanjidic
+import radicals
+
+LOG_FORMAT = "[%(asctime)s: %(levelname)s] %(name)s %(funcName)s: %(message)s"
 
 
 def search(graph, node, seen, depth=1000):
@@ -35,7 +41,6 @@ with gzip.GzipFile(P.join(CURR_DIR, 'heisig-data.txt.gz')) as fin:
         io.StringIO(fin.read().decode('utf-8')), delimiter=':'
     )
     heisig = list(reader)
-
 
 heisig_dict = {k['kanji']: k for k in heisig}
 from_keyword = {k['keyword5th-ed']: k['kanji'] for k in heisig}
@@ -105,8 +110,119 @@ links = ${edges};
 
         return mako.template.Template(template).render(**variables)
 
+    @cherrypy.expose
+    def builder(self):
+        with open(P.join(CURR_DIR, 'builder-template.html'), encoding='utf-8') as fin:
+            template = fin.read()
+        return template
+
+    @cherrypy.expose
+    def query(self, q):
+        parts = q.lower().split(" ")
+
+        logging.info('parts: %r', parts)
+
+        def meaning(kanji):
+            try:
+                info = kanjidic.DICT[kanji]
+            except KeyError:
+                return ""
+            else:
+                if info['meanings']:
+                    return info['meanings'][0]
+                return ""
+
+        def english_name(rad):
+            candidates = radicals.lookup(char=rad)
+            if candidates:
+                return candidates[0]["en"]
+            return ""
+
+        def num_radical_strokes(rad):
+            candidates = radicals.lookup(char=rad)
+            if candidates:
+                return candidates[0]["strokes"]
+            return 99
+
+        def make_radicals(radicals):
+            return [
+                {'kanji': rad, 'ruby': english_name(rad)}
+                for rad in sorted(radicals, key=num_radical_strokes)
+            ]
+
+        #
+        # TODO:
+        #
+        # - show the radicals in a table
+        # - handle spaces in names
+        # - autocomplete/autosuggest
+        #
+        search_results = multisearch(parts)
+        logging.info('search_results: %r', search_results)
+        results = [
+            {
+                "kanji": k,
+                "meaning": meaning(k),
+                "parts": " ".join(chise.decompose(k)),
+                "radicals": make_radicals(krad.DICT.get(k, [])),
+            } for k in search_results
+        ]
+
+        def num_strokes(kanji):
+            try:
+                info = kanjidic.DICT[kanji['kanji']]
+            except KeyError:
+                logging.error('no kanjidic entry for %r', kanji['kanji'])
+                return 99
+            else:
+                try:
+                    return int(info['S'])
+                except ValueError:
+                    return 99
+
+        results = sorted(results, key=num_strokes)
+        return json.dumps({"r": results})
+
+
+def multisearch(parts):
+    logging.info("parts: %r", parts)
+    candidates = set()
+
+    synsets = [synset(p) for p in parts]
+    synsets = [s for s in synsets if s]
+    logging.info('synsets: %r', synsets)
+
+    for list_of_kanji in itertools.product(*synsets):
+        candidates |= krad.search(*list_of_kanji)
+        candidates |= chise.search(*list_of_kanji)
+    return candidates
+
+
+def synset(part):
+    candidates = set()
+    candidates |= set([rad["char"] for rad in radicals.lookup(en=part)])
+
+    try:
+        candidates.add(from_keyword[part])
+    except KeyError:
+        pass
+
+    for info in kanjidic.DICT.values():
+        if part in info["meanings"]:
+            candidates.add(info["kanji"])
+
+    if len(part) == 1:
+        #
+        # Could already be a Kanji
+        #
+        candidates.add(part)
+
+    return sorted(candidates)
+
 
 def main():
+    logging.basicConfig(level=logging.DEBUG, format=LOG_FORMAT)
+
     host = '0.0.0.0'
     port = 8080
 

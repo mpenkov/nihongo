@@ -1,0 +1,256 @@
+<html>
+
+<head>
+
+<title>Kanji Compound Builder</title>
+
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+
+.kanji { font-size: 2.5em; }
+
+/* https://www.w3schools.com/howto/howto_js_sticky_header.asp */
+
+/* Style the header */
+.header {
+  padding: 10px 16px;
+  background: #aaa;
+  color: #f1f1f1;
+  z-index: 1000;
+}
+
+form {
+	text-align: center;
+	vertical-align: baseline;
+	display: inline-block;
+}
+
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 102px;
+}
+
+.hidden { display: 0; }
+
+/* https://stackoverflow.com/questions/38680695/adjust-the-vertical-positioning-of-ruby-text */
+ruby {
+	display: inline-block;
+	line-height: 1em;
+	position: relative;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	text-align: center;
+}
+
+span.rb {
+	width: 100px;
+	display: inline-block;
+}
+
+span.rt {
+	font-size: 0.5em;
+	position: absolute;
+	display: block;
+	line-height: 1.3em;
+	bottom: -1;
+	color: crimson;
+	width: 100px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header" id="header">
+
+<div>
+
+<form>
+	Kanji Compound:
+	<input id="input-kanji" type="text" value="" class="kanji">
+	<a href="#" onclick="$('#input-kanji').val('');">Clear</a>
+  
+	<a href="#" onclick="lookup($('#input-kanji').val())">Look up on WWWJDICT</a>
+</form>
+
+</div>
+
+<div>
+
+<form>
+	Enter Kanji parts: <input id="input-parts" type="text" value="舟 white">
+	<a href="#" onclick="$('#input-parts').val('');">Clear</a>
+	<a href="#" onclick="submitForm()">Search</a>
+</form>
+
+</div>
+
+</div>
+
+<div class="content">
+
+<table id="table-results">
+  <thead>
+    <tr>
+      <th>Controls</th>
+      <th>Kanji</th>
+      <th>KRAD radicals</th>
+      <th>CHISE parts</th>
+    </tr>
+  </thead>
+  <tbody id="tbody-results">
+  </tbody>
+</table>
+
+</div>
+
+<div class="hidden">
+
+<form id="wwwjdic-form" method="POST"
+    action="http://www.edrdg.org/cgi-bin/wwwjdic/wwwjdic?1F" target="blank">
+  <input type="hidden" name="jukugosel" value="1551498_1341350_X">
+  <input type="hidden" name="actionparam" value="_1551504_%BD%DC_0_">
+  <input type="hidden" name="originalkey" value="%BD%DC">
+  <input type="hidden" name="dsrchkey" value="" id="wwwjdic-key">
+  <input type="hidden" name="dicsel" value="1">
+  <input type="hidden" name="dsrchtype" value="E">
+  <input type="hidden" name="target" value="blank">
+</form>
+
+</div>
+
+<script src="/static/jquery-3.3.1.min.js"></script>
+
+<script>
+
+function append(kanji) {
+  var new_value = $("#input-kanji").val() + kanji;
+  $("#input-kanji").val(new_value);
+}
+
+function clearInput() {
+  console.log("clearInput");
+  $("#input-kanji").val("");
+}
+
+function lookup(kanji) {
+  var form = document.getElementById("wwwjdic-form");
+  var input = document.getElementById("wwwjdic-key").setAttribute("value", kanji);
+	form.submit();
+}
+
+function refreshResults(raw_result) {
+  var result = JSON.parse(raw_result)["r"];
+  $("#tbody-results").find("tr").remove();
+  for (var i = 0; i < result.length; i++) {
+    $("#tbody-results")
+      .append($("<tr>")
+        .append($("<td>")
+          .append($("<a>")
+            .attr("class", "button")
+            .attr("onclick", "append('" + result[i]["kanji"] + "')")
+            .attr("href", "#")
+            .text("[A]")
+          )
+          .append($("<a>")
+            .attr("class", "button")
+            .attr("onclick", "lookup('" + result[i]["kanji"] + "')")
+            .attr("href", "#")
+            .text("[L]")
+          )
+          .append($("<a>")
+            .attr("class", "button")
+            .attr("onclick", "lookup('" + result[i]["kanji"] + "')")
+            .attr("href", "/?kanji=" + result[i]["kanji"])
+            .attr("target", "blank")
+            .text("[M]")
+          )
+        )
+        .append($("<td>")
+          .attr("class", "kanji")
+          .append(make_ruby(result[i]["kanji"], result[i]["meaning"]))
+        )
+        .append(make_rubies(result[i]["radicals"]))
+        .append($("<td>")
+          .attr("class", "kanji")
+          .text(result[i]["parts"])
+        )
+      )
+  }
+}
+
+function make_ruby(kanji, ruby) {
+  return $("<ruby>")
+    .append($("<span>")
+      .attr("class", "rb")
+      .text(kanji)
+    )
+    .append($("<span>")
+      .attr("class", "rt")
+      .text(ruby)
+    );
+}
+
+function make_rubies(dicts) {
+  var td = $("<td>")
+  td.attr("class", "kanji")
+  for (var i = 0; i < dicts.length; ++i) {
+    td.append(make_ruby(dicts[i]["kanji"], dicts[i]["ruby"]));
+  }
+  return td;
+}
+
+function submitForm() {
+  var parts = $("#input-parts").val();
+
+  $.ajax(
+    {
+      url: "/query",
+      data: {q: parts},
+      success: refreshResults
+    }
+  );
+}
+
+submitForm();
+
+//
+// https://www.w3schools.com/howto/howto_js_sticky_header.asp
+//
+// When the user scrolls the page, execute myFunction
+window.onscroll = function() {onScroll()};
+
+// Get the header
+var header = document.getElementById("header");
+
+// Get the offset position of the navbar
+var sticky = header.offsetTop;
+
+// Add the sticky class to the header when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function onScroll() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+
+</script>
+
+</body>
+
+</html>
