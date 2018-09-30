@@ -4,6 +4,7 @@ https://en.wikipedia.org/w/index.php?title=Kangxi_radical&action=edit&section=3
 """
 
 import json
+import os.path as P
 import re
 
 _RADICAL_NUMBER_REGEX = re.compile(
@@ -15,10 +16,12 @@ _RADICAL_CHAR_REGEX = re.compile(
 
 RADICALS = []
 
+_CURR_DIR = P.dirname(P.abspath(__file__))
+
 
 def _lazy_init():
     global RADICALS
-    with open('radicals.json') as fin:
+    with open(P.join(_CURR_DIR, 'radicals.json')) as fin:
         RADICALS = [json.loads(line) for line in fin]
 
 

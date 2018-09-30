@@ -1,7 +1,10 @@
 import collections
+import os.path as P
 import gzip
 
-with gzip.GzipFile('kradfile.gz') as fin:
+_CURR_DIR = P.dirname(P.abspath(__file__))
+
+with gzip.GzipFile(P.join(_CURR_DIR, 'kradfile.gz')) as fin:
     _RAW_DATA = fin.read().decode('euc-jp')
 
 

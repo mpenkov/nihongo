@@ -1,4 +1,5 @@
 import gzip
+import os.path as P
 
 _FIELDS = ['MN', 'MP'] + list("UNBCSGHFPKLIQ")
 """
@@ -22,6 +23,8 @@ _FIELDS = ['MN', 'MP'] + list("UNBCSGHFPKLIQ")
 [Y] the PinYin (Chinese) pronunciation(s) of the kanji;
 """
 
+_CURR_DIR = P.dirname(P.abspath(__file__))
+
 
 def _parse_parts(parts):
     readings = []
@@ -42,7 +45,7 @@ def _parse_parts(parts):
 
 
 def _parse():
-    with gzip.GzipFile('kanjidic.gz') as fin:
+    with gzip.GzipFile(P.join(_CURR_DIR, 'kanjidic.gz')) as fin:
         next(fin)
         for line in fin:
             # http://www.edrdg.org/kanjidic/kanjidic.html

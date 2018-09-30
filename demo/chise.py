@@ -1,7 +1,9 @@
+import os.path as P
 import collections
 
+_CURR_DIR = P.dirname(P.abspath(__file__))
 
-with open('IDS-UCS-Basic.txt', encoding='utf-8') as fin:
+with open(P.join(_CURR_DIR, 'IDS-UCS-Basic.txt'), encoding='utf-8') as fin:
     _RAW_DATA = fin.read().rstrip()
 
 
